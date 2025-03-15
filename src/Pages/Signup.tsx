@@ -13,18 +13,21 @@ const Signup = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
-    const signUpWithGoogle = async () => {
-        setAuthing(true);
-        signInWithPopup(auth, new GoogleAuthProvider())
-            .then(response => {
-                console.log(response.user.uid);
-                navigate('/');
-            })
-            .catch(error => {
-                console.log(error);
-                setAuthing(false);
-            });
-    };
+   // Function to handle sign-up with Google
+   const signUpWithGoogle = async () => {
+    setAuthing(true);
+    
+    // Use Firebase to sign up with Google
+    signInWithPopup(auth, new GoogleAuthProvider())
+        .then(response => {
+            console.log(response.user.uid);
+            navigate('/Login');
+        })
+        .catch(error => {
+            console.log(error);
+            setAuthing(false);
+        });
+};
 
     const signUpWithEmail = async () => {
         if (password !== confirmPassword) {
@@ -38,7 +41,7 @@ const Signup = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(response => {
                 console.log(response.user.uid);
-                navigate('/');
+                navigate('/Login');
             })
             .catch(error => {
                 console.log(error);
