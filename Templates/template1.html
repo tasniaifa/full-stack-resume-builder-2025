@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #F97316;
+            --secondary-color: #FACC15;
+            --text-color: #374151;
+            --bg-color: #F9FAFB;
+        }
+    </style>
+</head>
+<body class="bg-[var(--bg-color)] flex justify-center py-10">
+    <div class="w-full max-w-3xl bg-white shadow-lg rounded-lg p-8 border-t-8 border-[var(--primary-color)]">
+        <!-- Header with Picture -->
+        <div class="flex items-center gap-6 p-6 bg-[var(--primary-color)] text-white rounded-t-lg">
+            <img src="profile.jpg" alt="Profile Picture" class="w-24 h-24 rounded-full object-cover border-4 border-white">
+            <div>
+                <h1 class="text-3xl font-bold">John Doe</h1>
+                <p class="text-lg">Web Developer | UI/UX Designer</p>
+                <p class="text-sm">johndoe@email.com | +123 456 7890 | johndoe.com</p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-4 mt-6">
+            <!-- Summary -->
+            <section class="col-span-1 bg-[var(--bg-color)] p-4 rounded-lg">
+                <h2 class="text-lg font-semibold text-[var(--text-color)] border-b pb-2">Summary</h2>
+                <p class="text-sm text-gray-600 mt-2">Experienced web developer with a passion for designing user-friendly websites and applications.</p>
+            </section>
+            
+            <!-- Skills -->
+            <section class="col-span-2">
+                <h2 class="text-lg font-semibold text-[var(--text-color)] border-b pb-2">Skills</h2>
+                <ul class="grid grid-cols-2 gap-2 mt-2 text-gray-600">
+                    <li class="bg-[var(--bg-color)] p-2 rounded">HTML & CSS</li>
+                    <li class="bg-[var(--bg-color)] p-2 rounded">JavaScript</li>
+                    <li class="bg-[var(--bg-color)] p-2 rounded">React.js</li>
+                    <li class="bg-[var(--bg-color)] p-2 rounded">Tailwind CSS</li>
+                    <li class="bg-[var(--bg-color)] p-2 rounded">Node.js</li>
+                    <li class="bg-[var(--bg-color)] p-2 rounded">UI/UX Design</li>
+                </ul>
+            </section>
+        </div>
+        
+        <!-- Experience -->
+        <section class="py-6">
+            <h2 class="text-lg font-semibold text-[var(--text-color)] border-b pb-2">Experience</h2>
+            <div class="mt-2">
+                <h3 class="font-semibold text-[var(--primary-color)]">Frontend Developer - ABC Company</h3>
+                <p class="text-sm text-gray-600">Jan 2021 - Present</p>
+                <p class="text-sm text-gray-600 mt-1">Developed responsive web applications using React.js and Tailwind CSS.</p>
+            </div>
+        </section>
+        
+        <!-- Education -->
+        <section class="py-6">
+            <h2 class="text-lg font-semibold text-[var(--text-color)] border-b pb-2">Education</h2>
+            <div class="mt-2">
+                <h3 class="font-semibold text-[var(--primary-color)]">Bachelor of Science in Computer Science</h3>
+                <p class="text-sm text-gray-600">XYZ University, 2017 - 2021</p>
+            </div>
+        </section>
+        
+        <!-- Color Palette Selector -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-[var(--text-color)]">Choose a Color Theme:</h2>
+            <div class="flex gap-2 mt-2">
+                <button onclick="setColorTheme('#F97316', '#FACC15')" class="w-8 h-8 bg-orange-500 rounded-full border"></button>
+                <button onclick="setColorTheme('#3B82F6', '#60A5FA')" class="w-8 h-8 bg-blue-500 rounded-full border"></button>
+                <button onclick="setColorTheme('#10B981', '#34D399')" class="w-8 h-8 bg-green-500 rounded-full border"></button>
+                <button onclick="setColorTheme('#9333EA', '#A855F7')" class="w-8 h-8 bg-purple-600 rounded-full border"></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function setColorTheme(primary, secondary) {
+            document.documentElement.style.setProperty('--primary-color', primary);
+            document.documentElement.style.setProperty('--secondary-color', secondary);
+        }
+    </script>
+</body>
+</html>

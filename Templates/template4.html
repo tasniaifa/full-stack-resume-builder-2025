@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Tailwind colors */
+        :root {
+            --primary-color: #4CAF50;  /* Default Green */
+            --secondary-color: #607d8b; /* Default Blue-grey */
+            --accent-color: #f3f4f6;    /* Light Grey */
+            --highlight-color: #ff5722; /* Orange */
+        }
+
+        /* Applying the color variables throughout the sections */
+        .header, .about-section, .work-experience, .education-section, .skills-section {
+            background-color: var(--accent-color);
+        }
+
+        .header h1, .about-section h2, .work-experience h2, .education-section h2, .skills-section h2 {
+            color: var(--primary-color);
+        }
+
+        .header p, .about-section p, .work-experience p, .education-section p, .skills-section p {
+            color: var(--secondary-color);
+        }
+
+        .footer {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+
+    <div class="max-w-4xl mx-auto my-10 p-8 bg-white rounded-lg shadow-lg">
+        <!-- Header Section with Picture -->
+        <div class="flex items-center space-x-8 header">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-32 h-32 rounded-full border-4" style="border-color: var(--primary-color)">
+            <div>
+                <h1 class="text-4xl font-bold">John Doe</h1>
+                <p class="text-xl">Software Developer</p>
+                <p class="text-sm">Phone: (123) 456-7890</p>
+                <p class="text-sm">Email: johndoe@email.com</p>
+                <p class="text-sm">Website: www.johndoe.com</p>
+            </div>
+        </div>
+
+        <hr class="my-4 border-gray-300">
+
+        <!-- About Section with Color Block -->
+        <section class="about-section p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold">About Me</h2>
+            <p class="text-lg mt-2">I am a passionate software developer with a strong background in building web applications. I have experience in various technologies including HTML, CSS, JavaScript, and Python. I am eager to contribute my skills to an innovative team.</p>
+        </section>
+
+        <hr class="my-4 border-gray-300">
+
+        <!-- Work Experience Section -->
+        <section class="work-experience p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold">Work Experience</h2>
+            
+            <div class="mt-4">
+                <div class="flex justify-between">
+                    <p class="text-lg font-semibold">Software Engineer</p>
+                    <p class="text-sm">Jan 2020 - Present</p>
+                </div>
+                <p class="text-gray-700 mt-2">Developed and maintained web applications using JavaScript, React, and Node.js. Collaborated with cross-functional teams to ensure high-quality product delivery.</p>
+            </div>
+
+            <div class="mt-6">
+                <div class="flex justify-between">
+                    <p class="text-lg font-semibold">Junior Developer</p>
+                    <p class="text-sm">Jun 2018 - Dec 2019</p>
+                </div>
+                <p class="text-gray-700 mt-2">Assisted in the development of web pages and backend services. Ensured the optimal performance of the applications and assisted in debugging issues.</p>
+            </div>
+        </section>
+
+        <hr class="my-4 border-gray-300">
+
+        <!-- Education Section -->
+        <section class="education-section p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold">Education</h2>
+
+            <div class="mt-4">
+                <p class="text-lg font-semibold">Bachelor of Science in Computer Science</p>
+                <p class="text-sm">University of XYZ | 2014 - 2018</p>
+            </div>
+        </section>
+
+        <hr class="my-4 border-gray-300">
+
+        <!-- Skills Section -->
+        <section class="skills-section p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold">Skills</h2>
+            <ul class="list-disc pl-6 mt-4">
+                <li>JavaScript (React, Node.js)</li>
+                <li>HTML5, CSS3</li>
+                <li>Python</li>
+                <li>Git, GitHub</li>
+                <li>Database Design (SQL)</li>
+            </ul>
+        </section>
+
+        <!-- Color Palette Selector -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-[var(--primary-color)]">Choose a Color Theme:</h2>
+            <div class="flex gap-2 mt-2">
+                <button onclick="setColorTheme('#F97316', '#FACC15')" class="w-8 h-8 bg-orange-500 rounded-full border"></button>
+                <button onclick="setColorTheme('#3B82F6', '#60A5FA')" class="w-8 h-8 bg-blue-500 rounded-full border"></button>
+                <button onclick="setColorTheme('#10B981', '#34D399')" class="w-8 h-8 bg-green-500 rounded-full border"></button>
+                <button onclick="setColorTheme('#9333EA', '#A855F7')" class="w-8 h-8 bg-purple-600 rounded-full border"></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-10 footer">
+        <p>© 2025 John Doe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function setColorTheme(primary, secondary) {
+            document.documentElement.style.setProperty('--primary-color', primary);
+            document.documentElement.style.setProperty('--secondary-color', secondary);
+        }
+    </script>
+</body>
+</html>
