@@ -41,7 +41,6 @@ const Navbar: React.FC = () => {
           Sign Up
         </NavLink>
       </div>
-      
     </header>
   );
 };
