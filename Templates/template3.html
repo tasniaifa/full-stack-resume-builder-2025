@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist CV Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color: #065F46;
+            --secondary-color: #10B981;
+            --text-color: #1F2937;
+            --bg-color: #F9FAFB;
+        }
+    </style>
+</head>
+<body class="bg-[var(--bg-color)] flex justify-center py-10">
+    <div class="w-full max-w-3xl bg-white shadow-lg rounded-lg p-10 border-l-8 border-[var(--primary-color)]">
+        <!-- Header -->
+        <div class="text-center">
+            <img src="profile.jpg" alt="Profile Picture" class="w-24 h-24 mx-auto rounded-full object-cover border-4 border-[var(--primary-color)]">
+            <h1 class="text-4xl font-bold text-[var(--primary-color)] mt-4">John Doe</h1>
+            <p class="text-lg text-gray-600">Software Engineer</p>
+            <p class="text-sm text-gray-500">📧 johndoe@email.com | 📞 +123 456 7890 | 🌍 johndoe.com</p>
+        </div>
+        
+        <!-- Divider -->
+        <hr class="my-6 border-[var(--secondary-color)]">
+        
+        <!-- Sections -->
+        <div class="grid grid-cols-2 gap-6">
+            <!-- Left Column -->
+            <div>
+                <h2 class="text-xl font-semibold text-[var(--text-color)] border-b pb-2">Experience</h2>
+                <div class="mt-2">
+                    <h3 class="font-semibold text-[var(--primary-color)]">Software Engineer - TechCorp</h3>
+                    <p class="text-sm text-gray-600">Jan 2022 - Present</p>
+                    <p class="text-sm text-gray-600 mt-1">Developing scalable web applications using modern technologies.</p>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div>
+                <h2 class="text-xl font-semibold text-[var(--text-color)] border-b pb-2">Education</h2>
+                <div class="mt-2">
+                    <h3 class="font-semibold text-[var(--primary-color)]">B.Sc. in Computer Science</h3>
+                    <p class="text-sm text-gray-600">XYZ University, 2017 - 2021</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Skills -->
+        <section class="mt-6">
+            <h2 class="text-xl font-semibold text-[var(--text-color)] border-b pb-2">Skills</h2>
+            <div class="flex flex-wrap gap-2 mt-2">
+                <span class="bg-[var(--secondary-color)] text-white px-3 py-1 rounded-full text-sm">HTML & CSS</span>
+                <span class="bg-[var(--secondary-color)] text-white px-3 py-1 rounded-full text-sm">JavaScript</span>
+                <span class="bg-[var(--secondary-color)] text-white px-3 py-1 rounded-full text-sm">React.js</span>
+                <span class="bg-[var(--secondary-color)] text-white px-3 py-1 rounded-full text-sm">Node.js</span>
+            </div>
+        </section>
+        
+        <!-- Color Palette Selector -->
+        <div class="mt-6">
+            <h2 class="text-lg font-semibold text-[var(--text-color)]">Choose a Color Theme:</h2>
+            <div class="flex gap-2 mt-2">
+                <button onclick="setColorTheme('#065F46', '#10B981')" class="w-8 h-8 bg-green-700 rounded-full border"></button>
+                <button onclick="setColorTheme('#3B82F6', '#60A5FA')" class="w-8 h-8 bg-blue-500 rounded-full border"></button>
+                <button onclick="setColorTheme('#9333EA', '#A855F7')" class="w-8 h-8 bg-purple-600 rounded-full border"></button>
+                <button onclick="setColorTheme('#DC2626', '#EF4444')" class="w-8 h-8 bg-red-600 rounded-full border"></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function setColorTheme(primary, secondary) {
+            document.documentElement.style.setProperty('--primary-color', primary);
+            document.documentElement.style.setProperty('--secondary-color', secondary);
+        }
+    </script>
+</body>
+</html>
