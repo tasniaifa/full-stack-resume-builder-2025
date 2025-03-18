@@ -200,6 +200,13 @@ body{
   border-radius: 5px;
 }
 
+.form-container h2{
+  font-size: 2rem;
+  color: var(--line-border-empty);
+  text-align: center;
+  padding: 2rem 0;
+}
+
 .form-container form textarea{
   width: 94%;
   border: 1px solid #ddd;
