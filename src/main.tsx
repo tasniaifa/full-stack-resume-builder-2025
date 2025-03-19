@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { initializeApp } from "firebase/app";
 import App from "./App";
 import "./index.css";
-
+import "./Pages/index.css"
 // Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDFS05amc8F0NQtwXFfG1iobBPhyl-VZ20",
