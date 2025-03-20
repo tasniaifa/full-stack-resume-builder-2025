@@ -1,8 +1,8 @@
-import './FormStyle.css'
+import "./index.css"
 export function Personal() {
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">Personal Information</h2>
+    <div className="p-6 rounded-lg shadow-md">
+      <h2 className="text-3xl font-semibold mb-10 text-white">Personal Information</h2>
       <form className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <Input label="First Name" type="text" placeholder="John" />
@@ -23,8 +23,8 @@ export function Personal() {
 
 export function Education() {
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">Education and Qualification</h2>
+    <div className="p-6 rounded-lg shadow-lg">
+      <h2 className="text-3xl font-semibold mb-10 text-white">Education and Qualification</h2>
       <form className="space-y-4">
         <Input label="Degree" type="text" placeholder="e.g. Bachelor of Science" />
         <Input label="City/Town" type="text" placeholder="San Francisco" />
@@ -41,8 +41,8 @@ export function Education() {
 
 export function Work() {
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">Work Experience</h2>
+    <div className="p-6 rounded-lg shadow-lg">
+      <h2 className="text-3xl font-semibold mb-10 text-white">Work Experience</h2>
       <form className="space-y-4">
         <Input label="Job Title" type="text" placeholder="e.g. Sales Manager" />
         <Input label="City/Town" type="text" placeholder="San Francisco" />
@@ -61,11 +61,11 @@ export function Work() {
 function Input({ label, type, placeholder }: { label: string; type: string; placeholder?: string }) {
   return (
     <div>
-      <label className="block text-gray-700 font-medium mb-1">{label}</label>
+      <label className="block text-white font-medium mb-1">{label}</label>
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300 outline-none"
+        className="w-full px-4 py-2 text-white border rounded-lg focus:ring focus:ring-blue-300 outline-none"
       />
     </div>
   );
@@ -75,11 +75,11 @@ function Input({ label, type, placeholder }: { label: string; type: string; plac
 function Textarea({ label, rows, placeholder }: { label: string; rows: number; placeholder?: string }) {
   return (
     <div>
-      <label className="block text-gray-700 font-medium mb-1">{label}</label>
+      <label className="block text-white font-medium mb-1">{label}</label>
       <textarea
         rows={rows}
         placeholder={placeholder}
-        className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300 outline-none"
+        className="w-full px-4 py-2 text-white border rounded-lg focus:ring focus:ring-blue-300 outline-none"
       />
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Progress from "./Progress";
+import "./index.css"
 import { Personal, Education, Work } from "./Form";
 import { FaUser, FaGraduationCap, FaBriefcase } from "react-icons/fa"; // Icons added
 
