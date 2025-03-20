@@ -4,8 +4,8 @@
   justify-content: center;
   position: relative;
   width: 60%;
-  margin-bottom: 20px;
-  margin: 0 auto;
+  margin-bottom: 40px;
+  margin: 50px auto;
 }
 
 /* Progress Bar */
@@ -24,7 +24,7 @@
 
 .progress-fill {
   height: 100%;
-  background-color: #4CAF50;
+  background-color: #b144e4;
   transition: width 0.3s ease-in-out;
 }
 
@@ -52,41 +52,55 @@
 }
 
 .circle.active {
-  background: #4CAF50;
+  background: #b144e4;
   color: white;
 }
 
 .circle span {
   position: absolute;
-  bottom: -20px;
+  bottom: -30px;
   font-size: 14px;
 }
 
 /* Button Styling */
 .btns {
   display: flex;
-  gap: 10px;
+  gap: 200px;
   margin-top: 20px;
-  justify-content: center
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .btn {
-  background: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
+  background: #c9a8d8;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  border: 2px;
+  padding: 10px 55px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #388E3C;
+  background: #6f5dd4;
 }
 
 .disabled {
   background: #ccc;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  border: 2px;
+  padding: 5px 20px;
+  font-size: 0.80rem;
+  font-weight: 600;
+  font-family: inherit;
   cursor: not-allowed;
-} with this :root {
+} 
+
+with this :root {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   font-weight: 400;
@@ -125,40 +139,29 @@ h1, h2 {
   font-size: 2rem;
   text-align: center;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-button {
-  border-radius: 8px;
-  border: none;
-  padding: 0.8em 1.5em;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: inherit;
-  background-color: #6a5acd;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-button:hover {
-  background-color: #8a75ff;
-}
 button:focus,
 button:focus-visible {
   outline: 3px solid #8a75ff;
 }
 
-/* Form Styles */
+/* Form Styles */ 
 .form-container {
-  width: 90%;
+  width: 100%;
   max-width: 500px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.932);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
+input label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
 form {
   display: flex;
   flex-direction: column;
@@ -168,23 +171,23 @@ form {
 label {
   font-size: 1rem;
   font-weight: 500;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 input, textarea {
   width: 100%;
   padding: 0.8em;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(196, 192, 192, 0.2);
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: rgb(170, 55, 55);
   font-size: 1rem;
   transition: all 0.3s ease-in-out;
 }
 
 input:focus, textarea:focus {
   border-color: #8a75ff;
-  outline: none;
+  outline: #c9a8d8;
 }
 
 /* Responsive Design */
