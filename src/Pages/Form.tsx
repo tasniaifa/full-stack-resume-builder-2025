@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import "./index.css"
 
 // ----------------------- Personal Form -----------------------
@@ -6,6 +6,7 @@ interface PersonalData {
   firstName: string;
   lastName: string;
   email: string;
+  image: File;
   phone: string;
   address: string;
   city: string;
@@ -19,6 +20,7 @@ interface PersonalProps {
      firstName: string;
      lastName: string;
      email: string;
+     image: File;
      phone: string;
      address: string;
      city: string;
@@ -27,6 +29,7 @@ interface PersonalProps {
    };
  }
 export function Personal({ updatePersonal, personalData }: PersonalProps) {
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const [data, setData] = useState(personalData);
 
   useEffect(() => {
@@ -36,33 +39,68 @@ export function Personal({ updatePersonal, personalData }: PersonalProps) {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
-    setData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+
+    if (type === "file") {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (file) {
+        setData((prev) => ({ ...prev, image: file }));
+      }
+    } else {
+      setData((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleImageClick = () => {
+    if (inputRef.current) {
+      inputRef.current.click();
+    }
   };
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">
+    <div className="p-6 rounded-lg shadow-xl color-white">
+      <h2 className="text-3xl font-bold mb-10 ">
         Personal Information
       </h2>
       <form className="space-y-4">
-        <div className="grid grid-cols-2 gap-4">
-          <Input
-            label="First Name"
-            type="text"
-            name="firstName"
-            placeholder="John"
-            value={data.firstName}
-            onChange={handleChange}
-          />
-          <Input
-            label="Last Name"
-            type="text"
-            name="lastName"
-            placeholder="Doe"
-            value={data.lastName}
-            onChange={handleChange}
-          />
+      <div className="grid grid-cols-10 gap-4 items-start">
+          <div onClick={handleImageClick} className="col-span-3 flex flex-col items-center" >
+            <img
+              src={data.image ? URL.createObjectURL(data.image) : "./photo.png"}
+              alt="Profile Preview"
+              className="w-32 h-32 rounded-full object-cover mb-2"
+            />
+            <label className="block text-white font-medium mb-1">
+              Upload Image
+            </label>
+            <input
+              type="file"
+              name="image"
+              accept="image/*"
+              ref = {inputRef}
+              style={{display: "none"}}
+              onChange={handleChange}
+              className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300 outline-none"
+            />
+          </div>
+          <div className="col-span-7 flex flex-col space-y-4">
+            <Input
+              label="First Name"
+              type="text"
+              name="firstName"
+              placeholder="John"
+              value={data.firstName}
+              onChange={handleChange}
+            />
+            <Input
+              label="Last Name"
+              type="text"
+              name="lastName"
+              placeholder="Doe"
+              value={data.lastName}
+              onChange={handleChange}
+            />
+          </div>
         </div>
         <Input
           label="Email"
@@ -158,8 +196,8 @@ export function Education({ updateEducation, educationData }: EducationProps) {
   };
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">
+    <div className="p-6 rounded-lg shadow-md">
+      <h2 className="text-3xl font-bold mb-10">
         Education and Qualification
       </h2>
       <form className="space-y-4">
@@ -254,8 +292,8 @@ export function Work({ updateWork, workData }: WorkProps) {
   };
 
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">
+    <div className="p-6 rounded-lg shadow-md">
+      <h2 className="text-3xl font-bold mb-10">
         Work Experience
       </h2>
       <form className="space-y-4">
@@ -325,14 +363,14 @@ interface InputProps {
 function Input({ label, type, name, placeholder, value, onChange }: InputProps) {
   return (
     <div>
-      <label className="block text-gray-700 font-medium mb-1">{label}</label>
+      <label className="block text-white font-medium mb-1">{label}</label>
       <input
         type={type}
         name={name}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300 outline-none"
+        className="w-full px-4 py-2 text-white border rounded-lg focus:ring focus:ring-blue-300 outline-none"
       />
     </div>
   );
