@@ -18,14 +18,11 @@ const Navbar: React.FC = () => {
         <NavLink to="/" className={({ isActive }) => (isActive ? "text-blue-400" : "hover:text-gray-300")}>
           Home
         </NavLink>
-        <NavLink to="/about" className={({ isActive }) => (isActive ? "text-blue-400" : "hover:text-gray-300")}>
-          About
+        <NavLink to="/ResumeTemplate" className={({ isActive }) => (isActive ? "text-blue-400" : "hover:text-gray-300")}>
+        Resume Template
         </NavLink>
         <NavLink to="/MultiStepsForm" className={({ isActive }) => (isActive ? "text-blue-400" : "hover:text-gray-300")}>
         Create Resume
-        </NavLink>
-        <NavLink to="/ResumeTemplate" className={({ isActive }) => (isActive ? "text-blue-400" : "hover:text-gray-300")}>
-        Resume Template
         </NavLink>
         <NavLink to="/contact" className={({ isActive }) => (isActive ? "text-blue-400" : "hover:text-gray-300")}>
           Contact

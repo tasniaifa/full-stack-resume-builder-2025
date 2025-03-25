@@ -26,6 +26,7 @@ header {
     font-size: 24px;
     font-weight: 700;
     background: linear-gradient(90deg, #0ef, #ff80ff, #80ffea); /* ✅ Neon + Pastel */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

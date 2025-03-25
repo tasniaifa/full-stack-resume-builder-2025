@@ -60,15 +60,22 @@
             </div>
         </section>
         
-        <!-- Color Palette Selector -->
-        <div class="mt-6">
-            <h2 class="text-lg font-semibold text-[var(--text-color)]">Choose a Color Theme:</h2>
-            <div class="flex gap-2 mt-2">
-                <button onclick="setColorTheme('#065F46', '#10B981')" class="w-8 h-8 bg-green-700 rounded-full border"></button>
-                <button onclick="setColorTheme('#3B82F6', '#60A5FA')" class="w-8 h-8 bg-blue-500 rounded-full border"></button>
-                <button onclick="setColorTheme('#9333EA', '#A855F7')" class="w-8 h-8 bg-purple-600 rounded-full border"></button>
-                <button onclick="setColorTheme('#DC2626', '#EF4444')" class="w-8 h-8 bg-red-600 rounded-full border"></button>
+        <!-- Color Palette Selector and Button -->
+        <div class="mt-6 flex justify-between items-center">
+            <div>
+                <h2 class="text-lg font-semibold text-[var(--text-color)]">Choose a Color Theme:</h2>
+                <div class="flex gap-2 mt-2">
+                    <button onclick="setColorTheme('#065F46', '#10B981')" class="w-8 h-8 bg-green-700 rounded-full border"></button>
+                    <button onclick="setColorTheme('#3B82F6', '#60A5FA')" class="w-8 h-8 bg-blue-500 rounded-full border"></button>
+                    <button onclick="setColorTheme('#9333EA', '#A855F7')" class="w-8 h-8 bg-purple-600 rounded-full border"></button>
+                    <button onclick="setColorTheme('#DC2626', '#EF4444')" class="w-8 h-8 bg-red-600 rounded-full border"></button>
+                </div>
             </div>
+            
+            <!-- Create Resume Button -->
+            <button onclick="navigateToMultistepsForm()" class="py-2 px-4 bg-[#4B0082] text-white rounded-lg">
+                Create Resume
+            </button>
         </div>
     </div>
     
@@ -76,6 +83,10 @@
         function setColorTheme(primary, secondary) {
             document.documentElement.style.setProperty('--primary-color', primary);
             document.documentElement.style.setProperty('--secondary-color', secondary);
+        }
+
+        function navigateToMultistepsForm() {
+            window.location.href = "/multistepsform";
         }
     </script>
 </body>
