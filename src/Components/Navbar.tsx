@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css"; // Import CSS file
-import Logo from "../assets/Logo.png"; // ✅ Import Logo
+import Logo from "../assets/Logo1.png"; // ✅ Import Logo
 
 const Navbar: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
       
       {/* ✅ Logo + Brand Name with Gradient Shading */}
       <NavLink to="/" className="flex items-center space-x-3">
-        <img src={Logo} alt="ResuMate Logo" className="h-10 w-auto" />  
+        <img src={Logo} alt="ResuMate Logo" className="h-9 w-10" />  
         <span className="brand-name">ResuMate</span> {/* ✅ Gradient Text */}
       </NavLink>
 

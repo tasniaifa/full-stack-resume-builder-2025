@@ -6,7 +6,7 @@ interface PersonalData {
   firstName: string;
   lastName: string;
   email: string;
-  image: File;
+  image: File | null;
   phone: string;
   address: string;
   city: string;
@@ -20,7 +20,7 @@ interface PersonalProps {
      firstName: string;
      lastName: string;
      email: string;
-     image: File;
+     image: File | null;
      phone: string;
      address: string;
      city: string;
@@ -170,16 +170,10 @@ interface EducationData {
 
 
 interface EducationProps {
-  updateEducation: (data: EducationData) => void;
-  educationData: {
-    degree: string;
-    institution: string;
-    city: string;
-    startDate: string;
-    endDate: string;
-    description: string;
-  };
+  updateEducation: (data: EducationData[]) => void;
+  educationData: EducationData[];
 }
+
 
 export function Education({ updateEducation, educationData }: EducationProps) {
   const [data, setData] = useState(educationData);
