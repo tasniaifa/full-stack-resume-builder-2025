@@ -170,10 +170,16 @@ interface EducationData {
 
 
 interface EducationProps {
-  updateEducation: (data: EducationData[]) => void;
-  educationData: EducationData[];
+  updateEducation: (data: EducationData) => void;
+  educationData: {
+    degree: string;
+    institution: string;
+    city: string;
+    startDate: string;
+    endDate: string;
+    description: string;
+  };
 }
-
 
 export function Education({ updateEducation, educationData }: EducationProps) {
   const [data, setData] = useState(educationData);
@@ -383,14 +389,14 @@ interface TextareaProps {
 function Textarea({ label, name, rows, placeholder, value, onChange }: TextareaProps) {
   return (
     <div>
-      <label className="block text-gray-700 font-medium mb-1">{label}</label>
+      <label className="block text-white font-medium mb-1">{label}</label>
       <textarea
         name={name}
         rows={rows}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-blue-300 outline-none"
+        className="w-full px-4 py-2 text-white border rounded-lg focus:ring focus:ring-blue-300 outline-none"
       />
     </div>
   );
